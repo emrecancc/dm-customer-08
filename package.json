@@ -2,11 +2,16 @@
   "name": "dm-customer-08",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
-    "test": "NEXTAUTH_SECRET=dev-secret node src/index.js"
+    "test": "jest"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "next-auth": "^4.0.0"
+  },
+  "devDependencies": {
+    "jest": "*"
   }
 }
