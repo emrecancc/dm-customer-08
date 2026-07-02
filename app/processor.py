@@ -1,11 +1,19 @@
 import re
 
-def process_lines(text: str) -> list:
-    results = []
-    lines = text.splitlines()
+
+def parse_line(line):
+    m = re.match(r'\\w+=(\\d+)', line)
+    if m:
+        key, value = m.group(1), int(m.group(2))
+        return key, value
+    return None
+
+
+def process(lines):
+    results = {}
     for line in lines:
-        if m := re.match(r'(\w+)=(\d+)', line):
-            results.append({'key': m.group(1), 'val': int(m.group(2))})
-        elif chunk := line.strip():
-            results.append({'raw': chunk})
+        parsed = parse_line(line)
+        if parsed:
+            key, value = parsed
+            results[key] = value
     return results
