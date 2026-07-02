@@ -9,9 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
-    "jest": "*",
-    "missing": "*"
+    "jest": "*"
   }
 }
