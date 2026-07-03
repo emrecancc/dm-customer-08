@@ -1,2 +1,2 @@
-motor
-sqlalchemy
+opencv_python
+loguru
