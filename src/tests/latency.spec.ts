@@ -2,10 +2,10 @@ import request from 'supertest';
 import app from '../app';
 
 describe('API latency', () => {
-  it('API responds within 250ms', async () => {
+  it('responds within 500ms', async () => {
     const start = Date.now();
-    await request(app).get('/api/health');
+    await request(app).get('/health');
     const duration = Date.now() - start;
-    expect(duration).toBeLessThan(700);
+    expect(duration).toBeLessThan(500);
   });
 });
