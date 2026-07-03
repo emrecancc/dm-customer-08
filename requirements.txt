@@ -1,2 +1,3 @@
-pandas
-beanie
+scikit_learn
+
+tortoise_orm
