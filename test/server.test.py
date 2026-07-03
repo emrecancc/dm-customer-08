@@ -1,11 +1,19 @@
+import request from 'supertest';
 import server from '../server';
 
-let srv;
+let serverInstance;
 
 beforeAll(() => {
-  srv = server.listen(0);
+  serverInstance = server.listen(0);
 });
 
-afterAll(() => srv.close());
+afterAll(() => {
+  serverInstance.close();
+});
 
-// Existing tests remain unchanged
+describe('GET /', () => {
+  it('returns 200', async () => {
+    const res = await request(serverInstance).get('/');
+    expect(res.status).toBe(200);
+  });
+});
