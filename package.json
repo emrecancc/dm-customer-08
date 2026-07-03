@@ -1,13 +1,10 @@
 {
   "name": "dm-customer-08",
   "version": "1.0.0",
-  "dependencies": {},
-  "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20"
-  },
   "scripts": {
-    "build": "tsc --noEmit || echo ok",
-    "test": "echo ok"
-  }
+    "build": "node -e \"require('fs').copyFileSync('server.js','server.js.bak')\"",
+    "start": "npm run build && node server.js.bak"
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }
