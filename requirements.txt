@@ -1,2 +1,1 @@
-pydantic
-aiohttp
+tensorflow==2.10.0
